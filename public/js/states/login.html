@@ -1,0 +1,20 @@
+<section ng-if="!auth.user">
+	<div>
+		Email: <input type="text" ng-model="auth.email">
+	</div>
+	<div>
+		Password: <input type="password" ng-model="auth.password">
+	</div>
+
+	<br>
+
+	<button ng-click="auth.signIn()">Log in</button>
+
+	<p ng-if="auth.error">
+		Error: <strong> {{ auth.error }} </strong>
+	</p>
+</section>
+
+<section ng-if="auth.user">
+	<h3>You are already logged in</h3>
+</section>
