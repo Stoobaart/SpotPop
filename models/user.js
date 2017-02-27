@@ -7,8 +7,7 @@ var UserSchema = new mongoose.Schema({
 		unique: true
 	},
 	uid: {
-		type: String,
-		unique: true
+		type: String
 	},
 	spots : [{ 
 		type: mongoose.Schema.Types.ObjectId, 

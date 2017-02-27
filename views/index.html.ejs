@@ -12,17 +12,25 @@
   <script src="/js/app.js"></script>
  
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css"> -->
-  <!-- <link rel="stylesheet" href="public/css/style.css"> -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+	<header>
+		<h1>SPOT POP!</h1>
+	</header>
 
 	<nav>
 		<ul>
 			<li><a ui-sref="home">Home</a></li>
+			<li><a ui-sref="new">Sign Up</a></li>
+			<li><a ui-sref="show">My Profile</a></li>
+			<li><a ui-sref="">My Spots</a></li>
+			<li><a ui-sref="">All Spots</a></li>
+			<li><a ui-sref="">Friends</a></li>
+			<li><a ui-sref="">Add Friends</a></li>
 		</ul>	
 	</nav>
-
-	<h1>SPOT POP!</h1>
 
 	<section ui-view></section>
 
