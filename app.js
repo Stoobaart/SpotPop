@@ -5,7 +5,7 @@ var app = express();
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:3000/spot-pop');
+mongoose.connect('mongodb://localhost/spot-pop');
 
 var routes = require('./config/routes');
 
