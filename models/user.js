@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var User = mongoose.Schema({
+var UserSchema = new mongoose.Schema({
 	tagName: {
 		type: String,
 		required: true,
@@ -9,7 +9,7 @@ var User = mongoose.Schema({
 	uid: {
 		type: String,
 		unique: true
-	}
+	},
 	spots : [{ 
 		type: mongoose.Schema.Types.ObjectId, 
 		ref: "Spot" 

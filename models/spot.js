@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var SpotSchema = mongoose.Schema({
+var SpotSchema = new mongoose.Schema({
 	title: { 
 		type: String,
 		required: true
