@@ -1,39 +1,49 @@
 var User = require('../models/user');
 
-function indexUsers(req, res) {
-	res.send('index');
+// function indexUser(req, res) {
+// 	User.find(function(req, res) {
+// 		if (err) return res.json(err + {message: 'Oh no! something has gone wrong!'})
+// 		res.json({})
+// 	})
+// }
+
+function showUser(req, res) {
+	User.find({ id: req.params.id } , function(err, user) {
+		if (err) res.json({message: 'Could not find a user', err : err});
+		res.json({user: user});
+	})
 }
 
-function showUsers(req, res) {
-	res.send('show');
+function createUser(req, res) {
+	User.create( req.body, function (err, user){
+		if(err) return res.json({message: 'Could not create user', err : err});
+		res.json(user)
+	});
 }
 
-function newUsers(req, res) {
-	res.send('new');
+function editUser(req, res) {
+	User.find(function(err, user) {
+		if (err) return res.json({message: 'Could not find user', err : err});
+		res.json({user: user});
+	})
 }
 
-function createUsers(req, res) {
-	res.send('create');
+function updateUser(req, res) {
+	User.update(function(err, user) {
+		if (err) return res.json ({message: 'Could not update this user', err : err})
+		res.json({user: user})
+	})
 }
 
-function editUsers(req, res) {
-	res.send('edit');
-}
-
-function updateUsers(req, res) {
-	res.send('update');
-}
-
-function deleteUsers(req, res) {
+function deleteUser(req, res) {
 	res.send('delete');
 }
 
 module.exports = {
-	index: indexUsers,
-	show: showUsers,
-	new: newUsers,
-	create: createUsers,
-	edit: editUsers,
-	update: updateUsers,
-	delete: deleteUsers
+	// index: indexUser,
+	show: showUser,
+	create: createUser,
+	edit: editUser,
+	update: updateUser,
+	delete: deleteUser
 }

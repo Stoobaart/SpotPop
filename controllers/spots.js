@@ -1,39 +1,42 @@
 var Spot = require('../models/spot');
 
-function indexSpots(req, res) {
-	res.send('index');
+function indexSpot(req, res) {
+	res.send('Spots index page');
 }
 
-function showSpots(req, res) {
-	res.send('show');
+function showSpot(req, res) {
+	Spot.find(function(err, spots) {
+		if (err) response.json({message: 'Could not find any spots'});
+		response.json({spots: spots});
+	})
 }
 
-function newSpots(req, res) {
+function newSpot(req, res) {
 	res.send('new');
 }
 
-function createSpots(req, res) {
+function createSpot(req, res) {
 	res.send('create');
 }
 
-function editSpots(req, res) {
+function editSpot(req, res) {
 	res.send('edit');
 }
 
-function updateSpots(req, res) {
+function updateSpot(req, res) {
 	res.send('update');
 }
 
-function deleteSpots(req, res) {
+function deleteSpot(req, res) {
 	res.send('delete');
 }
 
 module.exports = {
-	index: indexSpots,
-	show: showSpots,
-	new: newSpots,
-	create: createSpots,
-	edit: editSpots,
-	update: updateSpots,
-	delete: deleteSpots
+	index: indexSpot,
+	show: showSpot,
+	new: newSpot,
+	create: createSpot,
+	edit: editSpot,
+	update: updateSpot,
+	delete: deleteSpot
 }

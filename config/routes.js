@@ -4,11 +4,11 @@ var router = express.Router();
 var spotsController = require('../controllers/spots');
 var usersController = require('../controllers/users');
 
+
 // ========================USERS===========================
 router.route('/users')
+	// .get(usersController.index)
   .post(usersController.create);
-
-router.get('/users/new', usersController.new);
 
 router.route('/users/:id')
   .get(usersController.show)
@@ -18,18 +18,16 @@ router.route('/users/:id')
 
 
 // ========================SPOTS===========================
-router.route('/')
+router.route('/spots')
   .get(spotsController.index)
   .post(spotsController.create);
 
-router.get('/new', spotsController.new);
-
-router.route('/:id')
+router.route('spots/:id')
   .get(spotsController.show)
   .put(spotsController.update)
   .delete(spotsController.delete);
 
-router.get('/:id/edit', spotsController.edit);
+router.get('spots/:id/edit', spotsController.edit);
 
 // ========================================================
 
