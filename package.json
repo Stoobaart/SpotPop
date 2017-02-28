@@ -28,7 +28,8 @@
     "ejs": "^2.3.3",
     "express": "^4.13.4",
     "method-override": "^2.3.4",
-    "mongoose": "^4.0.7"
+    "mongoose": "^4.0.7",
+    "morgan": "^1.8.1"
   },
   "author": "Stuart Smith",
   "license": "ISC"
