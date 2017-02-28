@@ -15,7 +15,9 @@ function showUser(req, res) {
 }
 
 function createUser(req, res) {
-	User.create( req.body, function (err, user){
+	console.log(req.body)
+	User.create(req.body, function (err, user) {
+		if (err) console.log(err)
 		if(err) return res.json({message: 'Could not create user', err : err});
 		res.json(user)
 	});

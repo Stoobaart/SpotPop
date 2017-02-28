@@ -1,5 +1,6 @@
 angular
-	.module("SpotPop", ["ui.router", "firebase"])
+	.module("SpotPop", ["ui.router", "firebase", "ngResource"])
+	.constant('API', '/api')
 	.config(MainRouter)
 	.run(AuthCatcher)
 

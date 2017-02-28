@@ -2,15 +2,31 @@ angular
 	.module('SpotPop')
 	.controller('authenticationController', authenticationController)
 
-function authenticationController (Auth, $state) {
+function authenticationController (Auth, User, $state) {
 	var self = this
 
 	self.createUser = function() {
 		Auth.$createUserWithEmailAndPassword(self.email, self.password)
 		.then(function(user) {
-			resetCredentials()
 			console.log(user)
-			$state.go('spots')
+
+			User.create({
+				uid: user.uid,
+				tagName: self.tagName
+			}, function (user, err) {
+				self.err = err.err
+				resetCredentials()
+			})
+
+			// User.createUser(user.$uid)
+			// 	.then(function (user) {
+			// 		console.log(user.uid)
+			// 		$state.go('spots')
+			// 	})
+			// 	.catch(function (error) {
+			// 		self.error = error
+			// 	})
+			
 		}).catch(function(error) {
 			self.error = error
 		})
@@ -38,6 +54,7 @@ function authenticationController (Auth, $state) {
 	})
 
 	function resetCredentials () {
+		self.tagName = ""
 		self.email = ""
 		self.password = ""
 	}

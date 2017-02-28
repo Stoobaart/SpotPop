@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var routes = require('./config/routes');
 var ejs = require('ejs');
+var morgan = require('morgan')
 
 mongoose.connect('mongodb://localhost/spot-pop');
 
@@ -13,6 +14,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', ejs);
 
 app.use(cors());
+app.use(morgan('dev'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
