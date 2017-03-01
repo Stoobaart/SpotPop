@@ -1,5 +1,5 @@
 angular
-	.module("SpotPop", ["ui.router", "firebase", "ngResource"])
+	.module("SpotPop", ["ui.router", "firebase", "ngResource", "uiGmapgoogle-maps"])
 	.constant('API', '/api')
 	.config(MainRouter)
 	.run(AuthCatcher)
@@ -43,10 +43,17 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
 		})
 		.state('my-spots', {
 			url: '/my-spots',
-			templateUrl: '/js/states/my-spots.html'
+			templateUrl: '/js/states/my-spots.html',
+			resolve: authRequired
 		})
 		.state('spots', {
 			url: '/spots',
-			templateUrl: '/js/states/spots.html'
+			templateUrl: '/js/states/spots.html',
+			resolve: authRequired
 		})		
+		.state('add-spot', {
+			url: '/add-spot',
+			templateUrl: '/js/states/add-spot.html',
+			resolve: authRequired
+		})
 }
