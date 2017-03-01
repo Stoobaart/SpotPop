@@ -32,7 +32,10 @@ router.get('spots/:id/edit', spotsController.edit);
 // ========================================================
 
 
+// customs routes
 
+router.route('/my-spots/:uid')
+  .get(spotsController.getMySpots)
 
 
 module.exports = router;
