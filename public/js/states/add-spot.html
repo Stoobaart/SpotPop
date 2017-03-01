@@ -1,0 +1,22 @@
+<section ng-controller="SpotsController as spot">
+	<form ng-submit="spot.createSpot()">
+
+		<h1>Add Spot</h1>
+		<div>
+			Title: <input type="text" ng-model="spot.newSpot.title">
+		</div>
+		<div>
+			Body: <input type="text" ng-model="spot.newSpot.body">
+		</div>	
+		<div>
+			Video Url: <input type="text" ng-model="spot.newSpot.video">
+		</div>
+		<div>
+			Location: <input type="text" ng-model="spot.newSpot.location">
+		</div>
+
+		<br>
+
+		<button type="submit">Create Spot</button>
+	</form>
+</section>
