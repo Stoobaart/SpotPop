@@ -17,15 +17,6 @@ function authenticationController (Auth, User, $state) {
 				self.err = err.err
 				resetCredentials()
 			})
-
-			// User.createUser(user.$uid)
-			// 	.then(function (user) {
-			// 		console.log(user.uid)
-			// 		$state.go('spots')
-			// 	})
-			// 	.catch(function (error) {
-			// 		self.error = error
-			// 	})
 			
 		}).catch(function(error) {
 			self.error = error
