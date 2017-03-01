@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>SpotPop</title>
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.2/angular-resource.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
+<script src='lib/lodash/dist/lodash.js' type="text/javascript"></script>
+<script src='lib/angular-google-maps/dist/angular-google-maps.js' type="text/javascript"></script>
+<script src='lib/angular-simple-logger/dist/angular-simple-logger.js' type="text/javascript"></script>
 
   <script src="/js/app.js"></script>
-  <script type="text/javascript" src="js/factories/user.fact.js"></script>
 
+  <script type="text/javascript" src="js/factories/user.fact.js"></script>
   <script type="text/javascript" src="js/factories/auth.fact.js"></script>
+  <script type="text/javascript" src="js/factories/spot.fact.js"></script>
+  <script type="text/javascript" src="js/controllers/spots.ctrl.js"></script>
   <script type="text/javascript" src="js/controllers/auth.ctrl.js"></script>
- 
+
+
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -38,7 +45,7 @@
 		</ul>	
 	</nav>
 
-	<section ui-view></section>
+	<section ui-view ng-controller="SpotsController as spot"></section>
 
 
 </body>
