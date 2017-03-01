@@ -34,8 +34,9 @@ nav > ul > li {
 	border-radius: 3px;
 	background-color: #dcdcc5;
 	padding: 10px;
-	width: 11.675%;
+	width: 11.65%;
 	min-width: 110px;
+	margin: 0.1rem;
 }
 a {
 	text-decoration: none;
@@ -51,3 +52,53 @@ a {
 	padding: 150px;
 	text-align: center;
 }
+
+/*==============================SPOT=PANELS===============================*/
+.spotPanel {
+	width: 98vw;
+	background-color: #dcdcc5;
+	border: 0.5px solid black;
+	border-radius: 3px;
+	margin: 0.5rem;
+}
+li > h1 {
+	font-size: 3rem;
+}
+/*===================================MAP===================================*/
+.angular-google-map-container { 
+	height: 200px; 
+	width: 49vw;
+}
+.map {
+}
+#ytplayer {
+	width: 49vw; 
+	height: 200px;
+	float: left;
+}
+
+
+@media screen and (max-width: 1100px) {
+	nav > ul > li {
+		width: 5%;
+		min-width: 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
