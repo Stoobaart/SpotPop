@@ -9,7 +9,7 @@ var UserSchema = new mongoose.Schema({
 	uid: {
 		type: String
 	},
-	spots : [{ 
+	spot : [{ 
 		type: mongoose.Schema.Types.ObjectId, 
 		ref: "Spot" 
 	}],
