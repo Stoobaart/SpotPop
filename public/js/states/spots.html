@@ -1,1 +1,11 @@
 <h1>Here are all the Spots</h1>
+
+
+<section ng-init="spot.showSpots()">
+	<ul class="spotPanel" ng-repeat="spot in spot.all">
+		<li>{{ spot.title }}</li>
+		<li>{{ spot.body }}</li>
+		<li>{{ spot.video }}</li>
+		<li>{{ spot.location }}</li>
+	</ul>
+</section>

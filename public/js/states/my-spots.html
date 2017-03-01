@@ -1,1 +1,15 @@
 <h1>Here are the Users Spots that have been posted</h1>
+
+<a href="#" ui-sref="add-spot">+</a>
+
+<!-- <section ng-init="spot.showSpots()"> -->
+<section ng-init="spot.getMySpots()">
+
+	<ul class="spotPanel" ng-repeat="oneSpot in spot.all">
+		<li><h1>{{ oneSpot.title }}</h1></li>
+		<li>{{ oneSpot.location }}</li>
+		<li>{{ oneSpot.body }}</li>
+		<li><iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/8mps0LTpIBE" frameborder="0" allowfullscreen></iframe></li>
+		<ui-gmap-google-map class="map" center='spot.map.center' zoom='spot.map.zoom'></ui-gmap-google-map>
+	</ul>
+</section>
