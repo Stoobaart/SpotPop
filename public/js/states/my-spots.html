@@ -19,6 +19,11 @@
 		<youtube-video id="ytplayer" video-id="spot.all[$index].video"></youtube-video>
 			
 		</div>
-		<ui-gmap-google-map class="map" center='spot.map.center' zoom='spot.map.zoom'></ui-gmap-google-map>
+		<ui-gmap-google-map class="map" center='spot.map.center' zoom='spot.map.zoom'>
+			
+			<ui-gmap-marker coords="{ latitude: oneSpot.latitude, longitude: oneSpot.longitude }">
+
+    </ui-gmap-marker>
+		</ui-gmap-google-map>
 	</ul>
 </section>
