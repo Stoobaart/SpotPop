@@ -17,15 +17,13 @@ function showSpot(req, res) {
 
 function getMySpots (req, res) {
 	console.log(req.params)
-	// Spot.find({ uid: req.params.uid }, function(err, spots) {
-	// 	if (err) return res.json({message: 'Could not find any spots'});
-	// 	res.json({spots: spots});
-	// })
+
 	User.findOne({uid: req.params.uid }).populate('spot').exec(function (err, user) {
 		if (err) {
 			console.log(err)
 			return res.status(500).json(err)
 		}
+		console.log(user)
 		res.json(user)
 	})
 }
