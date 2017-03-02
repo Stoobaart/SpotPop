@@ -58,4 +58,9 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
 			templateUrl: '/js/states/add-spot.html',
 			resolve: authRequired
 		})
+		.state('friends', {
+			url: '/friends',
+			templateUrl: '/js/states/friends.html',
+			resolve: authRequired
+		})
 }
