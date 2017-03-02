@@ -6,9 +6,7 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
   var self = this;	
 
 	self.all = []
-	self.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-
-	self.id = 'ViTYx85uUUc'
+	self.map = { center: { latitude: 51.5074, longitude: 0.1278 }, zoom: 12 };
 
 	self.createSpot = function() {
 		Spot.create({
@@ -35,11 +33,9 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 		.then(function(res) {
 			console.log(res)
 			self.all = res.data.spots
-			console.log(self.all)
 		})
 		.catch(function(err) {
 			console.log(err)
-			self.err = err.err
 		})
 	}
 
@@ -54,7 +50,6 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 		.catch(function (err) {
 			console.log(err)
 		})
-		
 	}
 
 	function resetSpot () {
@@ -63,6 +58,8 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 		self.video = ""
 		self.location = ""
 	}
+
+	return self;
 
 
 }
