@@ -2,18 +2,27 @@
 	<form class="form" ng-submit="spot.createSpot()">
 
 		<h1>Add Spot</h1>
-		<label>
-			Title: </label><input type="text" ng-model="spot.newSpot.title">
+
+		<label>Title: </label>
+		<input type="text" ng-model="spot.newSpot.title">
 		
-		<label>
-			Description: </label><input type="text" ng-model="spot.newSpot.body">
+		<label>Description: </label>
+		<input type="text" ng-model="spot.newSpot.body">
 			
-		<label>
-			Video Url: </label><input type="text" ng-model="spot.newSpot.video">
+		<label>Video Url: </label>
+		<input type="text" ng-model="spot.newSpot.video">
 		
-		<label>
-			Location: </label><input type="text" ng-model="spot.newSpot.location">
+		<label>Location: </label>
+		<input type="text" ng-model="spot.newSpot.location">
 		
+
+		<input type="hidden" ng-model="spot.newSpot.idkey">
+
+		<label>Latitude: </label>
+		<input type="text" ng-model="spot.newSpot.latitude">
+
+		<label>Longitude: </label>
+		<input type="text" ng-model="spot.newSpot.longitude">
 
 		<br>
 
