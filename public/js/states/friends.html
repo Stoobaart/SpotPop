@@ -1,0 +1,16 @@
+<section class="spotsHeader">
+	<h1>Your Spots</h1>
+
+	<a href="#" ui-sref="add-spot">Add Spot +</a>
+</section>
+
+<!-- <section ng-init="spot.showSpots()"> -->
+<section ng-init="spot.getMySpots()">
+
+	<ul class="spotPanel" ng-repeat="oneSpot in spot.all track by $index">
+		<li><h1>{{ oneSpot.title }}</h1></li>
+		<li>{{ oneSpot.location }}</li>
+		<li>{{ oneSpot.body }}</li>
+		<li>{{ oneSpot.video }}</li>
+	</ul>
+</section>
