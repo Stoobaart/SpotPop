@@ -1,5 +1,5 @@
 angular
-	.module("SpotPop", ["ui.router", "firebase", "ngResource", "uiGmapgoogle-maps"])
+	.module("SpotPop", ["ui.router", "firebase", "ngResource", "uiGmapgoogle-maps", "youtube-embed"])
 	.constant('API', '/api')
 	.config(MainRouter)
 	.run(AuthCatcher)
@@ -35,11 +35,13 @@ function MainRouter ($stateProvider, $urlRouterProvider) {
 		})
 		.state('my-profile', {
 			url: '/users/:id',
-			templateUrl: '/js/states/my-profile.html'
+			templateUrl: '/js/states/my-profile.html',
+			resolve: authRequired
 		})
 		.state('edit', {
 			url: '/users/:id/edit',
-			templateUrl: '/js/states/edit.html'
+			templateUrl: '/js/states/edit.html',
+			resolve: authRequired
 		})
 		.state('my-spots', {
 			url: '/my-spots',
