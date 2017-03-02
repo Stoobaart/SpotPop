@@ -10,6 +10,7 @@ body {
 		linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
 		background-color: #131313;
 		background-size: 20px 20px;
+	min-width: 440px;
 }
 header {
 	background-color: #6f0909;
@@ -17,29 +18,47 @@ header {
 	height: 300px;
 }
 header > h1 {
-	font-size: 8rem;
+		color: #dcdcc5;
+		text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+		font-size: 12rem;
+		font-family: 'Lobster', cursive;
     position: absolute;
-    margin: 80px 0 0 80px;
+    margin: 50px 0 0 70px;
     font-weight: bold;
+}
+#logo {
+	width: 225px;
+  float: right;
+  margin-right: 146px;
 }
 nav {
 	height: 40px;
 }
 ul {
 	position: relative;
+	margin: auto;
+	width: 80vw;
+	margin-top: 10px;
 }
 nav > ul > li {
+	font-size: 1.3rem;
+	color: #6f0909;
 	display: inline-block;
 	border: 0.5px solid black;
 	border-radius: 3px;
 	background-color: #dcdcc5;
-	padding: 10px;
-	width: 11.65%;
-	min-width: 110px;
-	margin: 0.1rem;
+	padding: 8px;
+	width: 13%;
+	min-width: 9%;
 }
+
 a {
 	text-decoration: none;
+	color: #6f0909;
 }
 
 /*=============================HOME=PAGE=================================*/
@@ -53,39 +72,118 @@ a {
 	text-align: center;
 }
 
+/*=================================FORMS==================================*/
+.form {
+	background-color: #dcdcc5;
+	width: 40vw;
+	margin: auto;
+	height: 20vh;
+	min-width: 368px;
+}
+input { 
+  display: inline-block;
+  float: left;
+  margin-left: -50px;
+}
+label{
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 250px;
+  text-align: center;
+  margin-left: -50px;
+}
+form > h1 {
+ 	font-size: 2rem;
+  padding: 1rem;
+}
+#submit {
+	border-radius: 100%;
+	width: 50px;
+  height: 50px;
+  margin-left: 15px;
+}
+
+
 /*==============================SPOT=PANELS===============================*/
+.spotsHeader {
+
+	background-color: #dcdcc5;
+	width: 97vw;
+	border: 0.1rem solid black;
+	border-radius: 0.1rem;
+	padding: 1vw;
+	margin: 0.5rem;
+}
 .spotPanel {
-	width: 98vw;
+	padding: 1vw;
+	width: 97vw;
 	background-color: #dcdcc5;
 	border: 0.5px solid black;
 	border-radius: 3px;
 	margin: 0.5rem;
 }
-li > h1 {
+li > h1, section > h1 {
 	font-size: 3rem;
 }
 /*===================================MAP===================================*/
 .angular-google-map-container { 
 	height: 200px; 
-	width: 49vw;
-}
-.map {
+	width: 48vw;
 }
 #ytplayer {
-	width: 49vw; 
+	width: 48vw; 
 	height: 200px;
 	float: left;
 }
 
-
+/*============================RESPONSIVENESS================================*/
 @media screen and (max-width: 1100px) {
 	nav > ul > li {
-		width: 5%;
-		min-width: 
+		width: 10%;
+		min-width: 105px;
+		font-size: 1em;
+	}
+	header > h1 {
+	font-size: 10rem;
+	}
+	nav {
+		height: 80px;
 	}
 }
 
+@media screen and (max-width: 991px) {
+	nav > ul > li {
+		width: 9%;
+	}
+	header > h1 {
+	font-size: 8rem;
+	}
+}
+@media screen and (max-width: 919px) {
 
+}
+
+@media screen and (max-width: 780px) {
+	nav > ul > li {
+		
+	}
+	header > h1 {
+	font-size: 6rem;
+	width: 50vw;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	nav > ul > li {
+	}
+	header > h1 {
+	font-size: 5rem;
+	}
+	nav {
+		height: 120px;
+	}
+}
 
 
 
