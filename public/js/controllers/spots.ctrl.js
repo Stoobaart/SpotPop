@@ -8,6 +8,22 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 	self.all = []
 	self.map = { center: { latitude: 51.5074, longitude: 0.1278 }, zoom: 12 };
 
+	// self.markers = [{
+	// 	idkey: 1,
+	// 	coords: { latitude: 51.5074, longitude: 0.1278 }
+	// },{
+	// 	idkey: 2,
+	// 	coords: { latitude: 54.5074, longitude: 0.1378 }
+	// }, {
+	// 	idkey: 3,
+	// 	coords: { latitude: 51.5014, longitude: 0.1978 }
+	// }]
+	self.coords = {}
+	
+	
+
+	self.spots = {};
+
 	self.createSpot = function() {
 		Spot.create({
 			uid: Auth.$getAuth().uid,
@@ -15,16 +31,18 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 				title: self.newSpot.title,
 				body: self.newSpot.body,
 				video: self.newSpot.video,
-				location: self.newSpot.location
+				location: self.newSpot.location,
+				latitude: self.newSpot.latitude,
+				longitude: self.newSpot.longitude
 			}
 		})
 		.then(function (spot) {
 				self.newSpot = {}
 				$state.go('my-spots')
+				resetSpot()
 			})
 			.catch(function (err) {
 				self.err = err.err
-				resetSpot()
 			})
 	}
 
@@ -57,6 +75,8 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 		self.body = ""
 		self.video = ""
 		self.location = ""
+		self.latitude = ""
+		self.longitude = ""
 	}
 
 	return self;
