@@ -1,1 +1,6 @@
 <h1>Render the users profile here Stu</h1>
+
+<section ng-controller="UsersController as user" ng-init="user.getUser()">
+		<h1>Tag Name: {{ user.tagName }}</h1>
+		<p>Email: {{ auth.user.email }}</p>
+</section>

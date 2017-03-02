@@ -1,4 +1,7 @@
-<h1>Here are all the Spots</h1>
+<section class="spotsHeader">
+	<h1>All Spots in the community</h1>
+	<a href="#" ui-sref="add-spot">Add Spot +</a>
+</section>
 
 
 <section ng-init="spot.showSpots()">
@@ -7,5 +10,10 @@
 		<li>{{ spot.body }}</li>
 		<li>{{ spot.video }}</li>
 		<li>{{ spot.location }}</li>
+
+		<div>
+			<youtube-video id="ytplayer" video-id="spot.all[$index].video"></youtube-video>	
+		</div>
+		<ui-gmap-google-map class="map" center='spot.map.center' zoom='spot.map.zoom'></ui-gmap-google-map>
 	</ul>
 </section>
