@@ -1,3 +1,4 @@
+
 <section class="spotsHeader">
 	<h1>All Spots in the community</h1>
 	<a href="#" ui-sref="add-spot">Add Spot +</a>
@@ -5,15 +6,22 @@
 
 
 <section ng-init="spot.showSpots()">
-	<ul class="spotPanel" ng-repeat="spot in spot.all">
-		<li>{{ spot.title }}</li>
-		<li>{{ spot.body }}</li>
-		<li>{{ spot.video }}</li>
-		<li>{{ spot.location }}</li>
 
-		<div>
-			<youtube-video id="ytplayer" video-id="spot.all[$index].video"></youtube-video>	
-		</div>
-		<ui-gmap-google-map class="map" center='spot.map.center' zoom='spot.map.zoom'></ui-gmap-google-map>
+	<ul class="spotPanel" ng-repeat="allSpot in spot.all">
+		<li>{{ allSpot.title }}</li>
+		<li>{{ allSpot.body }}</li>
+		<li>{{ allSpot.video }}</li>
+		<li>{{ allSpot.location }}</li>
+
+		<youtube-video id="ytplayer" video-id="allSpot.video" src="https://www.youtube.com/watch?v=ViTYx85uUUc"></youtube-video>
+		
+
+<!-- 		<ui-gmap-google-map class="map" center='spot.map.center' zoom='spot.map.zoom'>
+			<ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id"></ui-gmap-marker>
+		</ui-gmap-google-map> -->
+		<ui-gmap-google-map center="spot.map.center" zoom="spot.map.zoom" draggable="true" events="spot.map.events">
+        	<ui-gmap-marker ng-repeat="m in spot.map.markers" coords="m.coords" icon="m.icon" idkey="m.id"></ui-gmap-marker>
+        	<markers models="spot.map" coords="{{ spot.map.center }}"></markers>
+    	</ui-gmap-google-map>
 	</ul>
 </section>
