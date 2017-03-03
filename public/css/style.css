@@ -18,17 +18,17 @@ header {
 	height: 300px;
 }
 header > h1 {
-		color: #dcdcc5;
-		text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;
-		font-size: 12rem;
-		font-family: 'Lobster', cursive;
-    position: absolute;
-    margin: 50px 0 0 70px;
-    font-weight: bold;
+	color: #dcdcc5;
+	text-shadow:
+	    -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	    -2px 2px 0 #000,
+	    2px 2px 0 #000;
+	font-size: 12rem;
+	font-family: 'Lobster', cursive;
+  position: absolute;
+  margin: 50px 0 0 70px;
+  font-weight: bold;
 }
 #logo {
 	width: 225px;
@@ -82,9 +82,9 @@ a {
 	min-width: 368px;
 }
 input { 
-  display: inline-block;
+/*  display: inline-block;
   float: left;
-  margin-left: -50px;
+  margin-left: -50px;*/
 }
 label{
   display: inline-block;
@@ -110,29 +110,45 @@ form > h1 {
 .spotsHeader {
 
 	background-color: #dcdcc5;
-	width: 97vw;
+	width: 96.5vw;
 	border: 0.1rem solid black;
-	border-radius: 0.1rem;
+	border-radius: 0.2rem;
 	padding: 1vw;
 	margin: 0.5rem;
 }
 .spotPanel {
 	padding: 1vw;
-	width: 97vw;
+	width: 96.5vw;
 	background-color: #dcdcc5;
 	border: 0.5px solid black;
-	border-radius: 3px;
+	border-radius: 0.2rem;
 	margin: 0.5rem;
 }
 li > h1, section > h1 {
 	font-size: 3rem;
 }
+
+/*=============================PROFILE=PAGE================================*/
+.profilePic {
+	height: 20rem;
+	width: 20rem;
+	border: 0.2rem solid black;
+	border-radius: 2rem;
+	float: left;
+}
+.profile {
+	min-height: 330px;
+}
+
+
+
+
 /*===================================MAP===================================*/
 .angular-google-map-container { 
 	height: 200px; 
 	width: 48vw;
 }
-#ytplayer {
+.ytplayer {
 	width: 48vw; 
 	height: 200px;
 	float: left;
