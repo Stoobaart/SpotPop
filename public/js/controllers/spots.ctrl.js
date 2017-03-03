@@ -7,21 +7,7 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 
 	self.all = []
 	self.map = { center: { latitude: 51.5074, longitude: 0.1278 }, zoom: 12 };
-
-	// self.markers = [{
-	// 	idkey: 1,
-	// 	coords: { latitude: 51.5074, longitude: 0.1278 }
-	// },{
-	// 	idkey: 2,
-	// 	coords: { latitude: 54.5074, longitude: 0.1378 }
-	// }, {
-	// 	idkey: 3,
-	// 	coords: { latitude: 51.5014, longitude: 0.1978 }
-	// }]
 	self.coords = {}
-	
-	
-
 	self.spots = {};
 
 	self.createSpot = function() {
