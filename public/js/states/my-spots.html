@@ -7,23 +7,25 @@
 <!-- <section ng-init="spot.showSpots()"> -->
 <section ng-init="spot.getMySpots()">
 
-	<ul class="spotPanel" ng-repeat="oneSpot in spot.all track by $index">
-		<li><h1>{{ oneSpot.title }}</h1></li>
-		<li>{{ oneSpot.location }}</li>
-		<li>{{ oneSpot.body }}</li>
-		<li>{{ oneSpot.video }}</li>
+	<ul class="spotPanel" ng-repeat="allSpot in spot.all">
+		<li><h1>{{ allSpot.title }}</h1></li>
+		<li>{{ allSpot.location }}</li>
+		<li>{{ allSpot.body }}</li>
+		<li>{{ allSpot.video }}</li>
 		<div>
 			
-<!-- 			<iframe id="ytplayer" type="text/html" src="https://www.youtube.com/watch?v=ViTYx85uUUc
-" frameborder="0" allowfullscreen></iframe> -->
-		<youtube-video id="ytplayer" video-id="spot.all[$index].video"></youtube-video>
-			
+		<div ng-controller="secretsController as vid" ng-init="vid.trustSrc(allSpot)">
+			<youtube-video class="ytplayer" video-id="ytplayer" video-url="allSpot.video"></youtube-video>
 		</div>
-		<ui-gmap-google-map class="map" center='spot.map.center' zoom='spot.map.zoom'>
-			
-			<ui-gmap-marker coords="{ latitude: oneSpot.latitude, longitude: oneSpot.longitude }">
 
-    </ui-gmap-marker>
-		</ui-gmap-google-map>
+    	<div ng-controller="MapsController as maps" ng-init="maps.setMapMarkerLocation(allSpot)">    
+  			<ui-gmap-google-map center='maps.map.center' zoom='maps.map.zoom'>
+   				<ui-gmap-marker coords="maps.marker.coords" options="maps.marker.options" idkey="allSpot._id"></ui-gmap-marker>
+			</ui-gmap-google-map>
+		</div>
+
 	</ul>
 </section>
+
+
+      
