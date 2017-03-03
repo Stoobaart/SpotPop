@@ -18,7 +18,7 @@ function userFactory(API, $http) {
 			return $http.get(API + '/users/' + id)
 		},
 		create: function(newUser) {
-			return $http.post(API + '/users', newSpot)
+			return $http.post(API + '/users', newUser)
 		},
 		delete: function(id) {
 			return $http.delete(API + '/users/' + id)
