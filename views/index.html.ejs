@@ -28,6 +28,8 @@
   <script type="text/javascript" src="js/controllers/spots.ctrl.js"></script>
   <script type="text/javascript" src="js/controllers/auth.ctrl.js"></script>
   <script type="text/javascript" src="js/controllers/users.ctrl.js"></script>
+  <script type="text/javascript" src="js/controllers/maps.ctrl.js"></script>
+  <script type="text/javascript" src="js/controllers/videos.ctrl.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="/css/reset.css">
@@ -43,9 +45,7 @@
 	<nav>
 		<ul>
 			<li class="btn"><a ui-sref="home">Home</a></li>
-			<li ng-if="!auth.user"><a class="btn" href="#" ui-sref="login"><svg>
-        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-      </svg>Log In</a></li>
+			<li ng-if="!auth.user"><a class="btn" href="#" ui-sref="login">Log In</a></li>
 			<li ng-if="!auth.user"><a href="#" ui-sref="signin">Sign Up</a></li>
 			<li ng-if="auth.user"><a href="#" ng-click="auth.signOut()">Log Out</a></li>
 			<li ng-if="auth.user"><a ui-sref="my-profile">My Profile</a></li>
