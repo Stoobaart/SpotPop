@@ -1,5 +1,12 @@
 var User = require('../models/user');
 
+function indexUser(req, res) {
+	User.find({}, function(err, users) {
+		if (err) return res.json({message: 'Could not find any users'});
+		res.json({ users: users });
+	})
+}
+
 function showUser(req, res) {
 	User.findOne({ uid: req.params.id } , function(err, user) {
 		if (err) res.json({message: 'Could not find a user', err : err});
@@ -35,6 +42,7 @@ function deleteUser(req, res) {
 }
 
 module.exports = {
+	index: indexUser,
 	show: showUser,
 	create: createUser,
 	edit: editUser,
