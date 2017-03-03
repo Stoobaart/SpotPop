@@ -1,6 +1,10 @@
-<h1>Render the users profile here Stu</h1>
+<section class="spotsHeader">
+	<h1>Your Profile</h1>
+</section>
 
-<section ng-controller="UsersController as user" ng-init="user.getUser()">
+<section class="spotPanel profile" ng-controller="UsersController as user" ng-init="user.getUser()">
+		<img class="profilePic" src="images/profileImg.png">
 		<h1>Tag Name: {{ user.tagName }}</h1>
 		<p>Email: {{ auth.user.email }}</p>
+
 </section>
