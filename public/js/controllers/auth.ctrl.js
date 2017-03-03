@@ -14,6 +14,7 @@ function authenticationController (Auth, User, $state) {
 				uid: user.uid,
 				tagName: self.tagName
 			}, function (user, err) {
+				console.log(err);
 				self.err = err.err
 				resetCredentials()
 			})
