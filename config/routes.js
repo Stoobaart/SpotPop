@@ -7,7 +7,7 @@ var usersController = require('../controllers/users');
 
 // ========================USERS===========================
 router.route('/users')
-	// .get(usersController.index)
+	.get(usersController.index)
   .post(usersController.create);
 
 router.route('/users/:id')
