@@ -4,7 +4,6 @@
 	<a href="#" ui-sref="add-spot">Add Spot +</a>
 </section>
 
-
 <section ng-init="spot.showSpots()">
 
 	<ul class="spotPanel" ng-repeat="allSpot in spot.all">
@@ -12,12 +11,15 @@
 		<li>{{ allSpot.body }}</li>
 		<li>{{ allSpot.video }}</li>
 		<li>{{ allSpot.location }}</li>
-		{{ allSpot.latitude }}
-		<youtube-video id="ytplayer" video-id="allSpot.video" src="https://www.youtube.com/watch?v=ViTYx85uUUc"></youtube-video>
-		
-		<ui-gmap-google-map center="spot.map.center" zoom="spot.map.zoom" draggable="true" events="spot.map.events">
-        	<ui-gmap-marker coords="{latitude: 'allSpot.latitude', longitude: 'allSpot.longitude'}" idkey="allSpot._id"></ui-gmap-marker>
-    	</ui-gmap-google-map>
+
+		<div ng-controller="secretsController as vid" ng-init="vid.trustSrc(allSpot)">
+			<youtube-video class="ytplayer" video-id="ytplayer" video-url="allSpot.video"></youtube-video>
+		</div>
+
+    	<div ng-controller="MapsController as maps" ng-init="maps.setMapMarkerLocation(allSpot)">    
+  			<ui-gmap-google-map center='maps.map.center' zoom='maps.map.zoom'>
+   				<ui-gmap-marker coords="maps.marker.coords" options="maps.marker.options" idkey="allSpot._id"></ui-gmap-marker>
+			</ui-gmap-google-map>
+		</div>
 	</ul>
 </section>
-
