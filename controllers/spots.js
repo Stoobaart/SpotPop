@@ -16,8 +16,6 @@ function showSpot(req, res) {
 }
 
 function getMySpots (req, res) {
-	console.log(req.params)
-
 	User.findOne({uid: req.params.uid }).populate('spot').exec(function (err, user) {
 		if (err) {
 			console.log(err)
@@ -38,25 +36,18 @@ function createSpot(req, res) {
 		if (err) return res.status(500).json(err)
 
 		var newSpot = new Spot(req.body.spot)
-	// console.log(user)
 		user.spot.push(newSpot._id)
 
-		newSpot.save(function (err) { if (err) console.log(err) });
-		user.save(function (err) { if (err) console.log(err) });
-
+		newSpot.save(function (err) { 
+			console.log(err)
+			if (err) return res.status(500).json(err) 
+		});
+		user.save(function (err) { 
+			console.log(err)
+			if (err) return res.status(500).json(err) 
+		});
+		res.json(newSpot)
 	})
-	// Spot.create(req.body.spot, function(err, spot) {
-	// 	console.log(err)
-	// 	if(err) return res.json({message: 'Could not create spot'});
-
-	// 	User.findOne({ uid: req.body.uid },  function(err, user) {
-	// 		if (err) return res.status(500).json(err)
-	// 		user.spots.push(spot)
-	// 		user.save();
-
-	// 		res.json({spot: spot});
-	// 	})
-	// })
 }
 
 function editSpot(req, res) {
