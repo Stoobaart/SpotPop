@@ -9,9 +9,8 @@
 
 	<ul class="spotPanel" ng-repeat="allSpot in spot.all">
 		<li><h1>{{ allSpot.title }}</h1></li>
-		<li>{{ allSpot.location }}</li>
-		<li>{{ allSpot.body }}</li>
-		<li>{{ allSpot.video }}</li>
+		<li><h2>Location: {{ allSpot.location }}</h2></li>
+		<li><h3>Description: {{ allSpot.body }}</h3></li>
 		<div>
 			
 		<div ng-controller="secretsController as vid" ng-init="vid.trustSrc(allSpot)">
