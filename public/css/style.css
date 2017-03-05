@@ -26,13 +26,13 @@ header > h1 {
 	    2px 2px 0 #000;
 	font-size: 12rem;
 	font-family: 'Lobster', cursive;
-  position: absolute;
-  margin: 50px 0 0 70px;
-  font-weight: bold;
+  	position: absolute;
+  	margin: 50px 0 0 70px;
+  	font-weight: bold;
 }
 #logo {
 	width: 225px;
-  float: right;
+	float: right;
   margin-right: 146px;
 }
 nav {
@@ -60,6 +60,25 @@ a {
 	text-decoration: none;
 	color: #6f0909;
 }
+footer {
+	margin-top: 100px;
+	background-color: #6f0909;
+	width: 100vw;
+	height: 150px;
+}
+#footerLogo {
+	height: 100px;
+}
+#footerLogoTitle {
+	padding-top: 10px;
+	font-family: 'Lobster', cursive;
+	color: #dcdcc5;
+	text-shadow:
+	    -2px -2px 0 #000,
+	    2px -2px 0 #000,
+	    -2px 2px 0 #000,
+	    2px 2px 0 #000;
+}
 
 /*=============================HOME=PAGE=================================*/
 #welcomeMsg {
@@ -78,13 +97,13 @@ a {
 	background-color: #dcdcc5;
 	width: 40vw;
 	margin: auto;
-	height: 20vh;
+	height: 30vh;
 	min-width: 368px;
+	border-radius: 1rem;
 }
 input { 
-/*  display: inline-block;
-  float: left;
-  margin-left: -50px;*/
+  margin-left: -3rem;
+  width: 50%;
 }
 label{
   display: inline-block;
@@ -102,7 +121,9 @@ form > h1 {
 	border-radius: 100%;
 	width: 50px;
   height: 50px;
-  margin-left: 15px;
+  float: right;
+  color: red;
+  margin: -0.5rem 1rem;
 }
 
 
@@ -127,6 +148,19 @@ form > h1 {
 li > h1, section > h1 {
 	font-size: 3rem;
 }
+li > h2 {
+	font-size: 2rem;
+}
+li > h3 {
+	font-size: 1.5rem;
+}
+.states {
+	min-height: 400px;
+}
+ul.spotPanel > li {
+	font-size: 2rem;
+}
+
 
 /*=============================PROFILE=PAGE================================*/
 .profilePic {
@@ -140,8 +174,30 @@ li > h1, section > h1 {
 	min-height: 330px;
 }
 
-
-
+/*================================COMMUNITY=PAGE================================*/
+.miniProfilePic {
+	height: 10rem;
+	width: 10rem;
+	border: 0.2rem solid black;
+	border-radius: 2rem;
+	float: left;
+}
+.allUsersDisplayPanel {
+	height: 11rem;
+}
+#communityMsg {
+	font-size: 1.8rem;
+    padding: 1rem;
+}
+#addFriendBtn {
+	padding: 0.5rem;
+	font-size: 1rem;
+	margin: 1rem;
+	border-radius: 0.5rem;
+}
+.communityNames {
+	color: #dcdcc5;
+}
 
 /*===================================MAP===================================*/
 .angular-google-map-container { 
@@ -199,6 +255,9 @@ li > h1, section > h1 {
 	}
 	nav {
 		height: 120px;
+	}
+	.allUsersDisplayPanel {
+		height: 18rem;
 	}
 }
 
