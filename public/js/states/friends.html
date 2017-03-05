@@ -1,10 +1,16 @@
 <section class="spotsHeader">
-	<h1>Friends</h1>
+	<h2 id="communityMsg">Welcome to the community, check out and add other users to keep track of their spots</h2>
 </section>
 
 <section ng-controller="UsersController as user" ng-init="user.showAllUsers()">
-
-	<ul ng-repeat="oneUser in user.allUsers">
-		<li><h1>{{ oneUser.tagName }}</h1></li>
+	<input type="text" ng-model="searchBox">
+	
+	<ul ng-repeat="oneUser in user.allUsers | filter: searchBox">
+		<div class="allUsersDisplayPanel">
+			<img class="miniProfilePic" src="images/profileImg.png">
+			<li><h1 class="communityNames">{{ oneUser.tagName }}</h1></li>
+			<button id="addFriendBtn" ng-click="user.addFriend(oneUser)">Add Friend +</button>
+		</div>
 	</ul>
+	
 </section>
