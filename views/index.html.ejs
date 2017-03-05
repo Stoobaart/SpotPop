@@ -51,12 +51,19 @@
 			<li ng-if="auth.user"><a ui-sref="my-profile">My Profile</a></li>
 			<li ng-if="auth.user"><a ui-sref="my-spots">My Spots</a></li>
 			<li ng-if="auth.user"><a ui-sref="spots">All Spots</a></li>
-			<li ng-if="auth.user"><a ui-sref="friends">Friends</a></li>
+			<li ng-if="auth.user"><a ui-sref="friends">Community</a></li>
 		</ul>	
 	</nav>
 
 	<section class="states" ui-view ng-controller="SpotsController as spot"></section>
 
+<footer>
+	<ul>
+		<p id="footerLogoTitle">SPOT POP</p>
+		<img id="footerLogo" src="images/SpotPopLogo.png">
+		<li>Copy right </li>
+	</ul>
+</footer>
 
 </body>
 </html>
