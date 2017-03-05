@@ -4,25 +4,28 @@
 		<h1>Add Spot</h1>
 
 		<label>Title: </label>
-		<input type="text" ng-model="spot.newSpot.title">
+		<input type="text" required ng-model="spot.newSpot.title" placeholder="Enter a title for this Spot">
 		
 		<label>Description: </label>
-		<input type="text" ng-model="spot.newSpot.body">
+		<input type="text" required ng-model="spot.newSpot.body" placeholder="Talk about feats, security, etc..">
 			
 		<label>Video Url: </label>
-		<input type="text" ng-model="spot.newSpot.video">
+		<input type="text" ng-model="spot.newSpot.video" placeholder="Paste in a youtube Url">
 		
 		<label>Location: </label>
-		<input type="text" ng-model="spot.newSpot.location">
-		
+		<input type="text" required ng-model="spot.newSpot.location" placeholder="town and city">
 
 		<input type="hidden" ng-model="spot.newSpot.idkey">
 
 		<label>Latitude: </label>
-		<input type="text" ng-model="spot.newSpot.latitude">
+		<input type="text" required ng-model="spot.newSpot.latitude">
 
 		<label>Longitude: </label>
-		<input type="text" ng-model="spot.newSpot.longitude">
+		<input type="text" required ng-model="spot.newSpot.longitude">
+
+		<div ng-controller="UsersController as user" ng-init="user.getUser()">
+			<input type="hidden" required ng-model="spot.newSpot.creator" name="creator" value="{{ user.tagName }}">
+		</div>
 
 		<br>
 
