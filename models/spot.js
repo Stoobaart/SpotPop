@@ -27,6 +27,10 @@ var SpotSchema = new mongoose.Schema({
 	},
 	longitude: {
 		type: Number
+	},
+	creator: {
+		type: String,
+		required: true
 	}
 });
 
