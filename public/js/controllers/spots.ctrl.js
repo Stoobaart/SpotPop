@@ -19,7 +19,8 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 				video: self.newSpot.video,
 				location: self.newSpot.location,
 				latitude: self.newSpot.latitude,
-				longitude: self.newSpot.longitude
+				longitude: self.newSpot.longitude,
+				creator: self.newSpot.creator
 			}
 		})
 		.then(function (spot) {
@@ -63,6 +64,7 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 		self.location = ""
 		self.latitude = ""
 		self.longitude = ""
+		self.creator = ""
 	}
 
 	return self;
