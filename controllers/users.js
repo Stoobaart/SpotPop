@@ -41,11 +41,24 @@ function deleteUser(req, res) {
 	res.send('delete');
 }
 
+function addFriend(req, res) {
+	User.findOneAndUpdate(
+		{uid: req.params.id}, 
+		{$addToSet : { friends: req.body.id}}, 
+		{new: true}, 
+		function(err, newUser) {
+			if (err) return res.status(500).json({ error: err});
+			return res.status(200).json({updatedUser: newUser});
+		}
+	)
+}
+
 module.exports = {
 	index: indexUser,
 	show: showUser,
 	create: createUser,
 	edit: editUser,
 	update: updateUser,
-	delete: deleteUser
+	delete: deleteUser,
+	friend: addFriend
 }
