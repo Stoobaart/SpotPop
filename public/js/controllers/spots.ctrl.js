@@ -36,7 +36,6 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 	self.showSpots = function() {
 		Spot.getAll()
 		.then(function(res) {
-			console.log(res)
 			self.all = res.data.spots
 		})
 		.catch(function(err) {
@@ -49,7 +48,6 @@ function SpotsController (Spot, Auth, $stateParams, $state, $http) {
 
 		Spot.getMySpots(uid)
 		.then(function(res) {
-			console.log(res)
 			self.all = res.data.spot
 		})
 		.catch(function (err) {

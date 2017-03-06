@@ -8,8 +8,6 @@ function authenticationController (Auth, User, $state) {
 	self.createUser = function() {
 		Auth.$createUserWithEmailAndPassword(self.email, self.password)
 		.then(function(user) {
-			console.log(user)
-
 			User.create({
 				uid: user.uid,
 				tagName: self.tagName
@@ -42,7 +40,6 @@ function authenticationController (Auth, User, $state) {
 	}
 
 	Auth.$onAuthStateChanged(function(user) {
-		console.log(user)
 		self.user = user
 	})
 

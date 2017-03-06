@@ -23,7 +23,6 @@ function UsersController (User, $stateParams, $state, Auth, $http) {
 	self.showAllUsers = function() {
 		User.getAll()
 		.then(function(res) {
-			console.log(res)
 			self.allUsers = res.data.users
 		})
 		.catch(function(err) {
