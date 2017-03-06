@@ -149,11 +149,13 @@ form > h1 {
 }
 #submit {
 	border-radius: 100%;
-	width: 50px;
-  height: 50px;
+	width: 60px;
+	height: 60px;
   float: right;
   color: red;
   margin: -0.5rem 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -196,8 +198,7 @@ ul.spotPanel > li {
 
 /*=============================PROFILE=PAGE================================*/
 .profilePic {
-	height: 20rem;
-	width: 20rem;
+	width: 45%;
 	border: 0.2rem solid black;
 	border-radius: 2rem;
 	float: left;
