@@ -23,8 +23,11 @@ function userFactory(API, $http) {
 		delete: function(id) {
 			return $http.delete(API + '/users/' + id)
 		},
-		update: function(id, updatedUser) {
-			return $http.put(API + '/users/' + id, updatedUser)
+		update: function(id, oneUser) {
+			return $http.put(API + '/users/' + id, oneUser)
+		},
+		friend: function(id, friend) {
+			return $http.patch(API + '/users/' + id, friend)
 		}
 	}
 }
