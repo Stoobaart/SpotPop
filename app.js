@@ -7,7 +7,7 @@ var routes = require('./config/routes');
 var ejs = require('ejs');
 var morgan = require('morgan')
 
-mongoose.connect('mongodb://localhost/spot-pop');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/spot-pop');
 
 app.use(express.static(__dirname + '/public'));
 
