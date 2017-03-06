@@ -133,7 +133,7 @@ section > h2 {
 input { 
   width: 50%;
 }
-label.signInLbl {
+div.signInLbl {
 	color: white;
 }
 label{
