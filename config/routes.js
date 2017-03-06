@@ -13,6 +13,7 @@ router.route('/users')
 router.route('/users/:id')
   .get(usersController.show)
   .put(usersController.edit)
+  .patch(usersController.friend)
   .delete(usersController.delete);
 // ========================================================
 
@@ -36,6 +37,5 @@ router.get('spots/:id/edit', spotsController.edit);
 
 router.route('/my-spots/:uid')
   .get(spotsController.getMySpots)
-
 
 module.exports = router;
