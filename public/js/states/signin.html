@@ -1,10 +1,10 @@
 <section class="signUp" ng-if="!auth.user">
 	<h2>Sign up</h2>
 
-	<label>Email: </label>
-	<input type="text" ng-model="auth.email">
+	<label class="signInLbl">Email: </label>
+	<input id="emailInput" type="text" ng-model="auth.email">
 
-	<label>Password: </label>
+	<label class="signInLbl">Password: </label>
 	<input type="password" ng-model="auth.password">
 
 	<label>Tag Name: </label>

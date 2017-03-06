@@ -66,7 +66,7 @@ footer {
 	position: absolute;
 	background-color: #6f0909;
 	width: 100vw;
-	height: 150px;
+	height: 170px;
 }
 #footerLogo {
 	height: 100px;
@@ -131,8 +131,10 @@ section > h2 {
 	border-radius: 1rem;
 }
 input { 
-  margin-left: -3rem;
   width: 50%;
+}
+.signInLbl {
+	color: white;
 }
 label{
   display: inline-block;
@@ -157,7 +159,9 @@ form > h1 {
   position: relative;
   z-index: 1;
 }
-
+#emailInput {
+	margin-left: 32px;
+}
 
 /*==============================SPOT=PANELS===============================*/
 .spotsHeader {
@@ -198,7 +202,7 @@ ul.spotPanel > li {
 
 /*=============================PROFILE=PAGE================================*/
 .profilePic {
-	width: 45%;
+	width: 40%;
 	border: 0.2rem solid black;
 	border-radius: 2rem;
 	float: left;
