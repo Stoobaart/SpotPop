@@ -6,7 +6,9 @@
 
 <section ng-init="spot.showSpots()">
 
-	<ul class="spotPanel" ng-repeat="allSpot in spot.all">
+	<input class="searchBox" type="text" ng-model="searchBox" placeholder="Search for spots">
+
+	<ul class="spotPanel" ng-repeat="allSpot in spot.all | filter: searchBox">
 		<li><h1>{{ allSpot.title }}</h1></li>
 		<li><h2>Location: {{ allSpot.location }}</h2></li>
 		<li><h3>Description: {{ allSpot.body }}</h3></li>

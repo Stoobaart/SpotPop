@@ -1,24 +1,24 @@
-<section ng-if="!auth.user">
-	<h1>Sign up</h1>
-	<div>
-		Email: <input type="text" ng-model="auth.email">
-	</div>
-	<div>
-		Password: <input type="password" ng-model="auth.password">
-	</div>	
-	<div>
-		Tag Name: <input type="string" ng-model="auth.tagName">
-	</div>
+<section class="signUp" ng-if="!auth.user">
+	<h2>Sign up</h2>
+
+	<label>Email: </label>
+	<input type="text" ng-model="auth.email">
+
+	<label>Password: </label>
+	<input type="password" ng-model="auth.password">
+
+	<label>Tag Name: </label>
+	<input type="string" ng-model="auth.tagName">
 
 	<br>
 
-	<button ng-click="auth.createUser()">Create User</button>
+	<button id="signUpBtn" ng-click="auth.createUser()">Create User</button>
 
 	<p ng-if="auth.error">
 		Error: <strong> {{ auth.error }} </strong>
 	</p>
 </section>
 
-<section ng-if="auth.user">
+<section class="signUp" ng-if="auth.user">
 	<h3>You are already logged in</h3>
 </section>
