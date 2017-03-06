@@ -6,7 +6,7 @@
 	<input class="searchBox" type="text" ng-model="searchBox" placeholder="Search for friends">
 	
 	<ul ng-repeat="oneUser in user.allUsers | filter: searchBox">
-		<div class="allUsersDisplayPanel">
+		<div ng-if="auth.user.uid !== oneUser.uid" class="allUsersDisplayPanel">
 			<img class="miniProfilePic" src="images/profileImg.png">
 			<li><h1 class="communityNames">{{ oneUser.tagName }}</h1></li>
 			<button id="addFriendBtn" ng-click="user.addFriend(oneUser)">Add Friend +</button>
@@ -14,3 +14,6 @@
 	</ul>
 	
 </section>
+
+
+<!--ng-if="auth.user.uid !== oneUser.uid" -->
