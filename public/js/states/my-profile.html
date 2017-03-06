@@ -5,6 +5,12 @@
 <section class="spotPanel profile" ng-controller="UsersController as user" ng-init="user.getUser()">
 		<img class="profilePic" src="images/profileImg.png">
 		<h1>Tag Name: {{ user.tagName }}</h1>
-		<p>Email: {{ auth.user.email }}</p>
+		<p class="personalFacts">Email: {{ auth.user.email }}</p>
+		<p class="personalFacts">First Name: </p>
+		<p class="personalFacts">Last Name: </p>
+		<p class="personalFacts">Home Town: </p>
+		<p class="personalFacts">Fave Skater: </p>
+		<p class="personalFacts">Current Deck: </p>
+		<p class="personalFacts">Best trick: </p>
 
 </section>
