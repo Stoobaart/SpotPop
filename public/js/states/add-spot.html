@@ -4,7 +4,7 @@
 		<h1>Add Spot</h1>
 
 		<label>Title: </label>
-		<input type="text" required ng-model="spot.newSpot.title" placeholder="Enter a title for this Spot">
+		<input type="text" required ng-model="spot.newSpot.title" placeholder="Enter park or area name">
 		
 		<label>Description: </label>
 		<input type="text" required ng-model="spot.newSpot.body" placeholder="Talk about feats, security, etc..">
@@ -22,10 +22,6 @@
 
 		<label>Longitude: </label>
 		<input type="text" required ng-model="spot.newSpot.longitude">
-
-		<div ng-controller="UsersController as user" ng-init="user.getUser()">
-			<input type="hidden" required ng-model="spot.newSpot.creator" name="creator" value="{{ user.tagName }}">
-		</div>
 
 		<br>
 
