@@ -2,18 +2,16 @@
 	<h2 id="communityMsg">Welcome to the community, check out and add other users to keep track of their spots</h2>
 </section>
 
-<section ng-controller="UsersController as user" ng-init="user.showAllUsers()">
+<section ng-controller="UsersController as user" ng-init="user.showAllUsers(); user.getUser()">
 	<input class="searchBox" type="text" ng-model="searchBox" placeholder="Search for friends">
 	
 	<ul ng-repeat="oneUser in user.allUsers | filter: searchBox">
 		<div ng-if="auth.user.uid !== oneUser.uid" class="allUsersDisplayPanel">
 			<img class="miniProfilePic" src="images/profileImg.png">
 			<li><h1 class="communityNames">{{ oneUser.tagName }}</h1></li>
-			<button id="addFriendBtn" ng-click="user.addFriend(oneUser)">Add Friend +</button>
+			<button ng-if="!user.isFriend(oneUser._id)" id="addFriendBtn" ng-click="user.addFriend(oneUser)">Add Friend +</button>
+			<li ng-if="user.isFriend(oneUser._id)"><h2 class="yourFriendMsg">Friends</h2></li>
 		</div>
 	</ul>
 	
 </section>
-
-
-<!--ng-if="auth.user.uid !== oneUser.uid" -->

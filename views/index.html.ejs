@@ -31,6 +31,8 @@
   <script type="text/javascript" src="js/controllers/maps.ctrl.js"></script>
   <script type="text/javascript" src="js/controllers/videos.ctrl.js"></script>
 
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -40,11 +42,12 @@
 	<header>
 		<h1>SPOT POP</h1>
 		<img id="logo" src="images/SpotPopLogo.png">
+		<p class="welcomeUserMsg">Welcome, {{ auth.user.email }}</p>
 	</header>
 
 	<nav>
 		<ul>
-			<li class="btn"><a ui-sref="home">Home</a></li>
+			<li><a ui-sref="home">Home</a></li>
 			<li ng-if="!auth.user"><a class="btn" href="#" ui-sref="login">Log In</a></li>
 			<li ng-if="!auth.user"><a href="#" ui-sref="signin">Sign Up</a></li>
 			<li ng-if="auth.user"><a href="#" ng-click="auth.signOut()">Log Out</a></li>

@@ -6,11 +6,13 @@ function UsersController (User, $stateParams, $state, Auth, $http) {
 	var self = this;
 
 	self.allUsers = []
+	self.friendsIds = []
 
 	self.getUser = function () {
 		var uid = Auth.$getAuth().uid
 		User.get(uid)
 			.then(function(res) {
+				self.friendsIds = res.data.user.friends.filter(function (friend) { return true })
 				self.tagName = res.data.user.tagName
 			})
 			.catch(function (err) {
@@ -21,6 +23,7 @@ function UsersController (User, $stateParams, $state, Auth, $http) {
 	self.showAllUsers = function() {
 		User.getAll()
 		.then(function(res) {
+			console.log(res)
 			self.allUsers = res.data.users
 		})
 		.catch(function(err) {
@@ -32,39 +35,16 @@ function UsersController (User, $stateParams, $state, Auth, $http) {
 		User.friend(Auth.$getAuth().uid, {
 			id: oneUser._id
 		}).then(function(res) {
-			console.log(res)
 			self.oneUser = {}
+			$state.reload()
 		})
 		.catch(function(err) {
 			console.log(err)
 		})
 	}
 
-
-
-		// User.get(uid).update({
-		// 	friends: {
-		// 		tagName: oneUser.tagName,
-		// 		uid: oneUser.uid,
-		// 		spot: oneUser.spot,
-		// 		friends: oneUser.friends
-		// 	}
-		// })
-
-
-			// 	User.get(uid)
-			// .then(function(res) {
-		 // 		console.log(res)
-			// 	res.update({
-			// 		friends: {
-			// 			tagName: oneUser.tagName,
-			// 			uid: oneUser.uid,
-			// 			spot: oneUser.spot,
-			// 			friends: oneUser.friends
-			// 		}
-			// 	})
-			// })
-
-
+	self.isFriend = function (personID) {
+		return self.friendsIds.indexOf(personID) !== -1
+	}
 
 }

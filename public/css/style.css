@@ -36,7 +36,9 @@ header > h1 {
   margin-right: 146px;
 }
 nav {
-	height: 40px;
+	height: 80px;
+	position: relative;
+    z-index: 1;
 }
 ul {
 	position: relative;
@@ -61,7 +63,7 @@ a {
 	color: #6f0909;
 }
 footer {
-	margin-top: 100px;
+	position: absolute;
 	background-color: #6f0909;
 	width: 100vw;
 	height: 150px;
@@ -79,17 +81,26 @@ footer {
 	    -2px 2px 0 #000,
 	    2px 2px 0 #000;
 }
+/*=============================BANNER=VIDEO==============================*/
+.fillWidth {
+	width: 100%;
+  margin-top: -5.2rem;
+}
 
 /*=============================HOME=PAGE=================================*/
 #welcomeMsg {
 	font-size: 1.5em;
-	background-color: #dcdcc5;
-	margin: auto;
-	margin-top: 20px;
+	background-color: rgba(220, 220, 197, 0.5);
+	margin: -52% auto 3%;
 	border-radius: 20px;
 	width: 300px;
-	padding: 100px;
+	padding: 50px;
 	text-align: center;
+	position: relative;
+}
+.welcomeUserMsg {
+	padding: 1rem;
+	color: white;
 }
 
 /*=================================FORMS==================================*/
@@ -156,12 +167,16 @@ form > h1 {
 	margin: 0.5rem;
 }
 .spotPanel {
-	padding: 1vw;
-	width: 96.5vw;
-	background-color: #dcdcc5;
-	border: 0.5px solid black;
-	border-radius: 0.2rem;
-	margin: 0.5rem;
+  padding: 1vw;
+  width: 70%;
+  background-color: #dcdcc5;
+  border: 0.5px solid black;
+  border-radius: 0.2rem;
+  margin: 1rem auto;
+}
+.vidNMaps {
+	width: 70%;
+  margin: auto;
 }
 li > h1, section > h1 {
 	font-size: 3rem;
@@ -171,9 +186,7 @@ li > h2, h2 {
 }
 li > h3 {
 	font-size: 1.5rem;
-}
-.states {
-	min-height: 400px;
+	margin: 0.3rem 0;
 }
 ul.spotPanel > li {
 	font-size: 2rem;
@@ -225,6 +238,9 @@ ul.spotPanel > li {
 .communityNames {
 	color: #dcdcc5;
 }
+.yourFriendMsg {
+	color: #dcdcc5;
+}
 
 /*===================================MAP===================================*/
 .angular-google-map-container { 
@@ -259,9 +275,15 @@ ul.spotPanel > li {
 	header > h1 {
 	font-size: 8rem;
 	}
+	#welcomeMsg {
+    	padding: 35px;
+    }
 }
-@media screen and (max-width: 919px) {
-
+@media screen and (max-width: 846px) {
+	#welcomeMsg {
+    	font-size: 1.2em;
+    	padding: 25px;
+    }
 }
 
 @media screen and (max-width: 780px) {
@@ -285,6 +307,9 @@ ul.spotPanel > li {
 	}
 	.allUsersDisplayPanel {
 		height: 18rem;
+	}
+	#welcomeMsg {
+		font-size: 1.4rem;
 	}
 }
 
