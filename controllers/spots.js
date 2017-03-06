@@ -38,6 +38,8 @@ function createSpot(req, res) {
 		var newSpot = new Spot(req.body.spot)
 		user.spot.push(newSpot._id)
 
+		newSpot.creator = user.tagName;
+
 		newSpot.save(function (err) { 
 			console.log(err)
 			if (err) return res.status(500).json(err) 
