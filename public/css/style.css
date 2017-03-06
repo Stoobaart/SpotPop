@@ -93,6 +93,24 @@ footer {
 }
 
 /*=================================FORMS==================================*/
+.signUp {
+	background-color: #dcdcc5;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 20px;
+	border: 0.1rem solid black;
+	width: 70%;
+	min-width: 390px;
+}
+section > h2 {
+	text-align: center;
+	padding: 1rem;
+}
+#signUpBtn {
+	position: center;
+	margin: 1% 0 1% 45%;
+}
+
 .form {
 	background-color: #dcdcc5;
 	width: 40vw;
@@ -148,7 +166,7 @@ form > h1 {
 li > h1, section > h1 {
 	font-size: 3rem;
 }
-li > h2 {
+li > h2, h2 {
 	font-size: 2rem;
 }
 li > h3 {
@@ -173,8 +191,17 @@ ul.spotPanel > li {
 .profile {
 	min-height: 330px;
 }
+.personalFacts {
+	font-size: 2rem;
+}
 
 /*================================COMMUNITY=PAGE================================*/
+.searchBox {
+	margin-left: 9px;
+	height: 25px;
+  font-size: 1rem;
+}
+
 .miniProfilePic {
 	height: 10rem;
 	width: 10rem;
