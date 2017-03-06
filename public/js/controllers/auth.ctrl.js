@@ -18,6 +18,7 @@ function authenticationController (Auth, User, $state) {
 				self.err = err.err
 				resetCredentials()
 			})
+			$state.go('spots')
 			
 		}).catch(function(error) {
 			self.error = error

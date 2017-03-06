@@ -29,34 +29,41 @@ function UsersController (User, $stateParams, $state, Auth, $http) {
 	}
 
 	self.addFriend = function(oneUser) {
-		var uid = Auth.$getAuth().uid
-		User.get(uid)
-			.then(function(res) {
-		 		console.log(res)
-				res.data.user.friends.push({
-						tagName: oneUser.tagName,
-						uid: oneUser.uid,
-						spot: oneUser.spot,
-						friends: oneUser.friends
-				})
-		 	})
-			.then(function() {
-				User.update()
-				self.oneUser = {}
-			})
-			.catch(function(err) {
-				console.log(err)
-			})
+		User.friend(Auth.$getAuth().uid, {
+			id: oneUser._id
+		}).then(function(res) {
+			console.log(res)
+			self.oneUser = {}
+		})
+		.catch(function(err) {
+			console.log(err)
+		})
 	}
-	// 	User.update({
-	// 		uid: Auth.$getAuth().uid,
-	// 		friends: {
-	// 			tagName: oneUser.tagName,
-	// 			uid: oneUser.uid,
-	// 			spot: oneUser.spot,
-	// 			friends: oneUser.friends
-	// 		}
-	// 	})
+
+
+
+		// User.get(uid).update({
+		// 	friends: {
+		// 		tagName: oneUser.tagName,
+		// 		uid: oneUser.uid,
+		// 		spot: oneUser.spot,
+		// 		friends: oneUser.friends
+		// 	}
+		// })
+
+
+			// 	User.get(uid)
+			// .then(function(res) {
+		 // 		console.log(res)
+			// 	res.update({
+			// 		friends: {
+			// 			tagName: oneUser.tagName,
+			// 			uid: oneUser.uid,
+			// 			spot: oneUser.spot,
+			// 			friends: oneUser.friends
+			// 		}
+			// 	})
+			// })
 
 
 
