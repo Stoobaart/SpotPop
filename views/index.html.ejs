@@ -48,7 +48,7 @@
 	<nav>
 		<ul>
 			<li><a ui-sref="home">Home</a></li>
-			<li ng-if="!auth.user"><a class="btn" href="#" ui-sref="login">Log In</a></li>
+			<li ng-if="!auth.user"><a href="#" ui-sref="login">Log In</a></li>
 			<li ng-if="!auth.user"><a href="#" ui-sref="signin">Sign Up</a></li>
 			<li ng-if="auth.user"><a href="#" ng-click="auth.signOut()">Log Out</a></li>
 			<li ng-if="auth.user"><a ui-sref="my-profile">My Profile</a></li>
