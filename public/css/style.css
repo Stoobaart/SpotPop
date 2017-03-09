@@ -133,9 +133,6 @@ section > h2 {
 input { 
   width: 50%;
 }
-div.signInLbl {
-	color: white;
-}
 label{
   display: inline-block;
   float: left;

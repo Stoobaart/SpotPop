@@ -8,6 +8,7 @@ function UsersController (User, $stateParams, $state, Auth, $http) {
 	self.allUsers = []
 	self.friendsIds = []
 
+// display a single user on the profile state
 	self.getUser = function () {
 		var uid = Auth.$getAuth().uid
 		User.get(uid)
@@ -20,6 +21,7 @@ function UsersController (User, $stateParams, $state, Auth, $http) {
 			})
 	}
 
+// show all users on the community state
 	self.showAllUsers = function() {
 		User.getAll()
 		.then(function(res) {
@@ -30,6 +32,7 @@ function UsersController (User, $stateParams, $state, Auth, $http) {
 		})
 	}
 
+// add friend function to be able to add users to your currently signed in user's friend list
 	self.addFriend = function(oneUser) {
 		User.friend(Auth.$getAuth().uid, {
 			id: oneUser._id
@@ -42,6 +45,7 @@ function UsersController (User, $stateParams, $state, Auth, $http) {
 		})
 	}
 
+// check to see if the user has been added as a friend already, to make stop the abitility to add the same person multiple times
 	self.isFriend = function (personID) {
 		return self.friendsIds.indexOf(personID) !== -1
 	}

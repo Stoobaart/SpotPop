@@ -6,6 +6,7 @@ angular
 function MapsController($state, $scope, Spot) {
 	var self = this;
 
+// create map start point and map marker position for use in the spots and my spots html states
 	self.setMapMarkerLocation = function(allSpot) {
 		self.map = {
 			center: {
